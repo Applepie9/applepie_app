@@ -17,6 +17,7 @@ gem 'jbuilder',                   '~> 2.7'
 gem 'devise',                     '~> 4.8'
 gem 'rubocop',                    '~> 1.20'
 gem 'bootstrap-will_paginate',    '1.0.0'
+gem 'factory_bot',                '~> 6.2'
 
 
 # Use Active Storage variant
