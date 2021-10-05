@@ -1,16 +1,12 @@
 class CreateRecipes < ActiveRecord::Migration[6.1]
   def change
     create_table :recipes do |t|
-      t.integer :recipe_id
       t.string :title
-      t.integer :author_id
+      t.references :user, null: false, foreign_key: true
       t.text :content
-      t.string :created_at
-      t.string :datetime,
-      t.string :updated_at
-      t.string :datetime
 
       t.timestamps
     end
+    add_index :microposts, [:user_id, :created_at]
   end
 end
