@@ -1,5 +1,3 @@
 README - applepie_app
 
-* Ruby version: 2.7.2p137
-
-* Rails version: 6.1.4.1
+This is a work in progress sample recipe application, Rails in the backend, React in the frontend.
