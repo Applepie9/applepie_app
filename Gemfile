@@ -15,6 +15,7 @@ gem 'jbuilder',                   '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise',                     '~> 4.8'
+gem 'doorkeeper',                 '~> 5.5', '>= 5.5.4'
 gem 'rubocop',                    '~> 1.20'
 gem 'bootstrap-will_paginate',    '1.0.0'
 gem 'factory_bot',                '~> 6.2'
@@ -50,6 +51,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
