@@ -1,28 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-import Cookies from 'js-cookie';
+import { Link } from "react-router-dom";
+import { loggedIn } from "./utils/auth.js"
+import Logout from "./components/auth/Logout.js";
 
 function App() {
-  // this.state = {
-  //   session: 
-  // }
-  // console.log(Cookies.get('_applepie_app_session'))
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <header className="App-header"> */}
+      <nav>
+      { loggedIn() ? <Logout /> : 
+        <div>
+          <Link to="login">Login</Link>
+          {" "}
+          <Link to="register">Register</Link>
+        </div>
+      }
+        
+      </nav>
+        
+      {/* </header> */}
     </div>
   );
 }

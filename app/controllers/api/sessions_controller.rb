@@ -1,19 +1,14 @@
 module Api
-  class UsersController < Api::ApplicationController
+  class SessionsController < Api::ApplicationController
     skip_before_action :doorkeeper_authorize!, only: %i[create]
 
     def create
-      user = User.new(
-        email: user_params[:email], 
-        password: user_params[:password], 
-        password_confirmation: user_params[:password_confirmation]
-      )
-
+      user = User.authenticate(session_params[:email], session_params[:password])
       client_app = Doorkeeper::Application.find_by(uid: request.headers["Client-Id"])
 
       return render(json: { error: 'Invalid client ID'}, status: 403) if !client_app
 
-      if user.save
+      if user
         access_token = Doorkeeper::AccessToken.create(
           resource_owner_id: user.id,
           application_id: client_app.id,
@@ -31,14 +26,21 @@ module Api
           }
         })
       else
-        render(json: { error: user.errors.full_messages }, status: 422)
+        render(json: { error: "Incorrect credentials" }, status: 422)
       end
+    end
+
+    def revoke
+      doorkeeper_token.revoke
+
+      render(json: {}, status: 200)
+
     end
 
     private
 
-    def user_params
-      params.permit(:email, :password, :password_confirmation)
+    def session_params
+      params.permit(:email, :password)
     end
   end
 end
