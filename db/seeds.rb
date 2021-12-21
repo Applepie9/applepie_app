@@ -9,4 +9,4 @@ Dotenv.load
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Doorkeeper::Application.create(name: "React", uid: ENV["REACT_UID"], secret: ENV["REACT_SECRET"])
+Doorkeeper::Application.create(name: "React", uid: ENV["CLIENT_UID"], secret: ENV["CLIENT_SECRET"])

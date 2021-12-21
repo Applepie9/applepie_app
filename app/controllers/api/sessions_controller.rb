@@ -34,7 +34,6 @@ module Api
       doorkeeper_token.revoke
 
       render(json: {}, status: 200)
-
     end
 
     private

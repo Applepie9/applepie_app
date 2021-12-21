@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 import env from "react-dotenv";
 
 export default function Login() {
-  const [credentials, setCredentials] = useState({email: "", password: ""});
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [failure, setFailure] = useState(false);
 
   const handleChange = (event) => {
-    const newValue = { ...credentials, ...{ [event.target.name]: event.target.value } }
+    const newValue = {
+      ...credentials,
+      ...{ [event.target.name]: event.target.value },
+    };
     setCredentials(newValue);
-  }
+  };
 
   const handleSubmit = (event) => {
     axios
@@ -20,27 +23,27 @@ export default function Login() {
           email: credentials.email,
           password: credentials.password,
         },
-        { 
+        {
           withCredentials: true,
           headers: {
-            'Client-Id': env.CLIENT_UID
-          }
+            "Client-Id": env.CLIENT_UID,
+          },
         }
       )
-      .then(response => {
-        Cookies.set("session", response.data.user.access_token, { expires: 7 })
-        window.location.href = '/';
+      .then((response) => {
+        Cookies.set("session", response.data.user.access_token, { expires: 7 });
+        window.location.href = "/";
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("login error", error);
-        setFailure(true)
+        setFailure(true);
       });
     event.preventDefault();
-  }
+  };
 
   return (
     <div>
-      { failure && <label>Something went wrong</label> }
+      {failure && <label>Something went wrong</label>}
       <form onSubmit={handleSubmit}>
         <input
           type="email"
