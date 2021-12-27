@@ -9,9 +9,11 @@ import reportWebVitals from "./reportWebVitals";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import NotFound from "./components/NotFound";
+import Toolbar from "./components/Toolbar";
 
 ReactDOM.render(
   <BrowserRouter>
+    <Toolbar></Toolbar>
     <Routes>
       <Route eaxct path="/" element={<App />} />
       <Route path="/login" element={<Login />} />
