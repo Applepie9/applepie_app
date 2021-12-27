@@ -6,9 +6,9 @@ import App from "./App";
 // import Loading from "./components/Loading";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
-import Login from "./components/auth/Login.js";
-import Register from "./components/auth/Register.js";
-import NotFound from "./components/NotFound.js";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
+import NotFound from "./components/NotFound";
 
 ReactDOM.render(
   <BrowserRouter>
