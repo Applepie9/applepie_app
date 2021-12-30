@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
 // import Nav from "./components/Nav";
 // import Loading from "./components/Loading";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -11,12 +10,14 @@ import Register from "./components/auth/Register";
 import NotFound from "./components/NotFound";
 import Toolbar from "./components/Toolbar";
 import Recipe from "./components/Recipe";
+import ShowAll from "./components/ShowAll";
+import ShowMain from "./components/ShowMain";
 
 ReactDOM.render(
   <BrowserRouter>
-    <Toolbar></Toolbar>
+    <Toolbar />
     <Routes>
-      <Route exact path="/" element={<App />} />
+      <Route exact path="/" element={<div> <ShowMain />, <ShowAll/> </div>} />
       <Route path="/recipe" element={<Recipe />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
