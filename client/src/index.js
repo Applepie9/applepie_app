@@ -10,12 +10,14 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import NotFound from "./components/NotFound";
 import Toolbar from "./components/Toolbar";
+import Recipe from "./components/Recipe";
 
 ReactDOM.render(
   <BrowserRouter>
     <Toolbar></Toolbar>
     <Routes>
-      <Route eaxct path="/" element={<App />} />
+      <Route exact path="/" element={<App />} />
+      <Route path="/recipe" element={<Recipe />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="*" element={<NotFound />} />

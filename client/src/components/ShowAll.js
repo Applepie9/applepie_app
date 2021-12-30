@@ -4,14 +4,14 @@ import { Card, CardGroup } from "react-bootstrap";
 
 export default function ShowAll() {
   return (
-    <div style={{ margin: "0px 25px 50px 25px", padding: "10px" }}>
+    <div style={{ margin: "0px 15px 0px 15px", padding: "10px" }}>
       <div>
-        <a href={`https://www.nosalty.hu`}>
+        <a href={`https://www.pickuplimes.com`}>
           <Card
             className="bg-dark text-white"
             style={{
-              margin: "0px 0px 50px 0px",
-              border: "15px",
+              margin: "0px 0px 30px 0px",
+              border: "10px",
               width: "500px",
             }}
           >
@@ -51,7 +51,7 @@ export default function ShowAll() {
           ></CardComp>
           <CardComp
             recipeimage={
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/VAN_CAT.png/440px-VAN_CAT.png"
+              "/salted-caramel-apple-pie.jpeg"
             }
             avatar={`https://universe.leagueoflegends.com/en_US/champions`}
             recipename={"Applepie3"}
