@@ -42,7 +42,13 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        margin: "0px 15px 30px 15px",
+        border: "20px",
+        padding: "10px"
+      }}
+    >
       {failure && <label>Something went wrong</label>}
       <form onSubmit={handleSubmit}>
         <input
