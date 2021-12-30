@@ -1,6 +1,5 @@
 import React from "react";
-import CardComp from "./CardComp";
-import { Card, CardGroup } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 export default function ShowAll() {
   return (
@@ -9,10 +8,8 @@ export default function ShowAll() {
         <Card
           className="bg-dark text-white"
           style={{
-            margin: "0px 0px 25px 0px",
-            border: "30px",
             width: "500px",
-            padding: "20px",
+            padding: "40px",
           }}
         >
           <Card.Img
@@ -21,7 +18,7 @@ export default function ShowAll() {
             style={{ height: "250px" }}
           />
           <Card.Body>
-            <Card.Title>Applepie</Card.Title>
+            <Card.Title>Salted Caramel Apple Pie</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -32,3 +29,4 @@ export default function ShowAll() {
     </div>
   );
 }
+

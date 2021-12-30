@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-// import Nav from "./components/Nav";
-// import Loading from "./components/Loading";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import Login from "./components/auth/Login";
@@ -18,7 +16,7 @@ ReactDOM.render(
     <Toolbar />
     <Routes>
       <Route exact path="/" element={<div> <ShowMain />, <ShowAll/> </div>} />
-      <Route path="/recipe" element={<Recipe />} />
+      <Route path="/recipe" element={<div> <Recipe />, <ShowAll/> </div>} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="*" element={<NotFound />} />

@@ -1,12 +1,12 @@
 import React from "react";
 import CardComp from "./CardComp";
-import { Card, CardGroup } from "react-bootstrap";
+import { CardGroup } from "react-bootstrap";
 
 export default function ShowAll() {
   return (
     <div
       className="space-around"
-      style={{ margin: "0px 15px 0px 15px", padding: "10px" }}
+      style={{ margin: "0px 15px 0px 15px", padding: "10px", textAlign: "center" }}
     >
       <CardGroup className=" grid space-around card-list">
         <CardComp
