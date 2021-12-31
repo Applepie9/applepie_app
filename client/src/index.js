@@ -15,8 +15,8 @@ ReactDOM.render(
   <BrowserRouter>
     <Toolbar />
     <Routes>
-      <Route exact path="/" element={<div> <ShowMain />, <ShowAll/> </div>} />
-      <Route path="/recipe" element={<div> <Recipe />, <ShowAll/> </div>} />
+      <Route exact path="/" element={<div> <ShowMain />, <ShowAll/> </div>}/>
+      <Route path="/recipe/:recipeId" element={<Recipe />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="*" element={<NotFound />} />

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import env from "react-dotenv";
 
 export default function Register() {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -18,7 +17,7 @@ export default function Register() {
   const handleSubmit = (event) => {
     axios
       .post(
-        `${env.SERVER_HOST}/api/users`,
+        `http://localhost:3000/api/users`,
         {
           email: credentials.email,
           password: credentials.password,
@@ -27,7 +26,7 @@ export default function Register() {
         {
           withCredentials: true,
           headers: {
-            "Client-Id": env.CLIENT_UID,
+            "Client-Id": 'ON5KyEPfHZeSxUVc9umKP9X3UlLpbOoYpu0AnlD-wV4',
           },
         }
       )

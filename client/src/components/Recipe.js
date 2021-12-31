@@ -1,7 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, CardGroup } from "react-bootstrap";
+// import { useParams, Outlet } from "react-router-dom";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 export default function Recipe() {
+  // let { recipeId } = useParams();
+  // console.log(recipeId);
+  console.log(process.env);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/api/recipes", {
+        withCredentials: true,
+        headers: {
+          Authorization: `Bearer ${Cookies.get("session")}`,
+          Accept: "application/json",
+        },
+      })
+      .then(function (response) {
+        // handle success
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+  }, []);
+
   return (
     <div
       style={{
