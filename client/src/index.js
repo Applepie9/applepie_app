@@ -7,16 +7,16 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import NotFound from "./components/NotFound";
 import Toolbar from "./components/Toolbar";
-import Recipe from "./components/Recipe";
-import ShowAll from "./components/ShowAll";
-import ShowMain from "./components/ShowMain";
+import ShowRecipe from "./components/ShowRecipe";
+import RecipeTiles from "./components/RecipeTiles";
+import RecipeHighlight from "./components/RecipeHighlight";
 
 ReactDOM.render(
   <BrowserRouter>
     <Toolbar />
     <Routes>
-      <Route exact path="/" element={<div> <ShowMain />, <ShowAll/> </div>}/>
-      <Route path="/recipe/:recipeId" element={<Recipe />} />
+      <Route exact path="/" element={<div> <RecipeHighlight />, <RecipeTiles /> </div>}/>
+      <Route path="/recipe/:recipeId" element={<ShowRecipe />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="*" element={<NotFound />} />

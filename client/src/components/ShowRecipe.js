@@ -1,17 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, CardGroup } from "react-bootstrap";
-// import { useParams, Outlet } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-export default function Recipe() {
-  // let { recipeId } = useParams();
-  // console.log(recipeId);
-  console.log(process.env);
+export default function ShowRecipe() {
+  let { recipeId } = useParams();
+  const [recipe, setRecipe] = useState({});
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/recipes", {
+      .get(`http://localhost:3000/api/recipes/${recipeId}`, {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${Cookies.get("session")}`,
@@ -38,6 +37,7 @@ export default function Recipe() {
         padding: "10px",
       }}
     >
+      <h1>Recipe {recipeId}</h1>
       <Card
         className="bg-dark text-white"
         style={{
