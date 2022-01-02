@@ -10,13 +10,15 @@ import Toolbar from "./components/Toolbar";
 import ShowRecipe from "./components/ShowRecipe";
 import RecipeTiles from "./components/RecipeTiles";
 import RecipeHighlight from "./components/RecipeHighlight";
+import NewRecipe from "./components/NewRecipe";
 
 ReactDOM.render(
   <BrowserRouter>
     <Toolbar />
     <Routes>
-      <Route exact path="/" element={<div> <RecipeHighlight />, <RecipeTiles /> </div>}/>
+      <Route exact path="/" element={<div> <RecipeHighlight/>, <RecipeTiles /> </div>}/>
       <Route path="/recipe/:recipeId" element={<ShowRecipe />} />
+      <Route path="/recipe/new" element={<NewRecipe />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="*" element={<NotFound />} />

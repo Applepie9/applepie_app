@@ -19,7 +19,7 @@ export default function ShowRecipe() {
       })
       .then(function (response) {
         // handle success
-        console.log(response);
+        setRecipe(response.data);
       })
       .catch(function (error) {
         // handle error
@@ -37,7 +37,6 @@ export default function ShowRecipe() {
         padding: "10px",
       }}
     >
-      <h1>Recipe {recipeId}</h1>
       <Card
         className="bg-dark text-white"
         style={{
@@ -50,7 +49,7 @@ export default function ShowRecipe() {
           src="/salted-caramel-apple-pie.jpeg"
           style={{ height: "250px" }}
         />
-        <Card.Title>Salted Caramel Apple Pie</Card.Title>
+        <Card.Title style={{fontSize: "30px"}}>{recipe.title}</Card.Title>
       </Card>
 
       <div style={{ color: "black" }}>
@@ -59,6 +58,8 @@ export default function ShowRecipe() {
             <Card.Header style={{ fontSize: "25px" }}>Ingredients</Card.Header>
             <Card.Body>
               <Card.Text>
+                <li>{recipe.content}</li>
+
                 <li>
                   homemade pie crust (recipe makes 2 crusts; 1 for bottom and 1
                   for lattice top)

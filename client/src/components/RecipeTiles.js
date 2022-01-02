@@ -53,7 +53,7 @@ export default function RecipeTiles() {
               }
               recipename={data.title}
             ></CardComp>
-          ))}
+          )).slice(-6).reverse()}
         </React.Fragment>
       </CardGroup>
     </div>
