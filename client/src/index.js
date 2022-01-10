@@ -7,18 +7,20 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import NotFound from "./components/NotFound";
 import Toolbar from "./components/Toolbar";
-import ShowRecipe from "./components/ShowRecipe";
-import RecipeTiles from "./components/RecipeTiles";
-import RecipeHighlight from "./components/RecipeHighlight";
-import NewRecipe from "./components/NewRecipe";
+import ShowRecipe from "./components/recipe/ShowRecipe";
+import RecipeTiles from "./components/recipe/RecipeTiles";
+import RecipeHighlight from "./components/recipe/RecipeHighlight";
+import NewRecipe from "./components/recipe/NewRecipe";
+import EditRecipe from "./components/recipe/EditRecipe";
 
 ReactDOM.render(
   <BrowserRouter>
     <Toolbar />
     <Routes>
       <Route exact path="/" element={<div> <RecipeHighlight/>, <RecipeTiles /> </div>}/>
-      <Route path="/recipe/:recipeId" element={<ShowRecipe />} />
       <Route path="/recipe/new" element={<NewRecipe />} />
+      <Route exact path="/recipe/:recipeId" element={<ShowRecipe />} />
+      <Route path="/recipe/:recipeId/edit" element={<EditRecipe />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="*" element={<NotFound />} />

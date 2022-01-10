@@ -6,7 +6,6 @@ export default function RecipeHighlight() {
   return (
     <div style={{ margin: "0px 15px 0px 15px", padding: "10px" }}>
       <Card
-        // onClick={this.}
         className="bg-dark text-white"
         style={{
           width: "500px",

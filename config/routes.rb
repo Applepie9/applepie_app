@@ -18,7 +18,9 @@ Rails.application.routes.draw do
     resource :sessions, only: %i[create] do
       post :revoke, on: :member
     end
-    resources :recipes
+    resources :recipes do
+      put :upload, on: :member
+    end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

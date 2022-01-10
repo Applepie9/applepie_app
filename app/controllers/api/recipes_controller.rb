@@ -1,7 +1,8 @@
 module Api
   class RecipesController < Api::ApplicationController
     respond_to :json
-    before_action :set_recipe, only: [:show, :update, :destroy]
+    before_action :set_recipe, only: [:show, :update, :upload, :destroy]
+    # skip_before_action :doorkeeper_authorize!
 
     # GET /recipes
     # GET /recipes.json
@@ -20,27 +21,37 @@ module Api
     # POST /recipes
     # POST /recipes.json
     def create
-      @recipe = Recipe.new(recipe_params)
-      #@recipe = current_user.recipes.build(recipe_params)
-      respond_to do |format|
-        if @recipe.save
-          format.json { render json: @recipe, status: :created, location: @recipe }
-        else
-          format.json { render json: @recipe.errors, status: :unprocessable_entity }
-        end
+      # byebug
+      @recipe = Recipe.new(recipe_params.except(:file))
+      @recipe.photo.attach(params[:file])
+      @recipe.user = current_user
+      if @recipe.save
+        render json: @recipe, status: :created
+      else
+        render json: @recipe.errors, status: :unprocessable_entity
+      end
+    end
+
+    def upload
+      # The data is a file upload coming from <input type="file" />
+      @recipe.photo.attach(params[:file])
+      # Generate a url for easy display on the front end 
+      photo = url_for(@recipe.photo)
+
+        # Now save that url in the recipe
+      if @recipe.update(photo_url: photo)
+        render json: @recipe, status: :ok
       end
     end
 
     # PATCH/PUT /recipes/1
     # PATCH/PUT /recipes/1.json
     def update
-      respond_to do |format|
         if @recipe.update(recipe_params)
-          format.json { render json: @recipe, status: :ok, location: @recipe }
+          render json: @recipe, status: :ok
         else
-          format.json { render json: @recipe.errors, status: :unprocessable_entity }
+          render json: @recipe.errors, status: :unprocessable_entity
         end
-      end
     end
 
     # DELETE /recipes/1
@@ -60,7 +71,7 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def recipe_params
-        params.require(:recipe).permit(:user_id, :title, :content)
+        params.require(:recipe).permit(:user_id, :title, :ingredients, :content, :file)
       end
 
   end

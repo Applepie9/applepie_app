@@ -11,6 +11,7 @@ export default function Login() {
       ...credentials,
       ...{ [event.target.name]: event.target.value },
     };
+    console.log("valami")
     setCredentials(newValue);
   };
 

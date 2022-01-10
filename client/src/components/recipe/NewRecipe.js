@@ -6,8 +6,6 @@ import { useNavigate } from "react-router-dom";
 export default function NewRecipe() {
   let navigate = useNavigate();
   const [recipe, setRecipe] = useState({});
-  // const [title, setTitle] = useState("");
-  // const [content, setContent] = useState("");
   const headers = {
     Authorization: `Bearer ${Cookies.get("session")}`,
     Accept: "application/json",
@@ -58,21 +56,32 @@ export default function NewRecipe() {
       >
         <label style={{ padding: "10px" }}>
           Title:
-          <input
+          <textarea
             type="text"
             name="title"
-            placeholder="Title"
+            placeholder="Add Title"
             value={recipe.title}
             onChange={handleChange}
             required
           />
         </label>
         <label style={{ padding: "10px" }}>
+          Ingredients:
+          <textarea
+            type="text"
+            name="ingredients"
+            placeholder="Add Ingredients"
+            value={recipe.ingredients}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label style={{ padding: "10px" }}>
           Description:
-          <input
+          <textarea
             type="text"
             name="content"
-            placeholder="Description"
+            placeholder="Add Description"
             value={recipe.content}
             onChange={handleChange}
             required

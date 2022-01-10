@@ -21,6 +21,7 @@ gem 'rubocop',                    '~> 1.20'
 gem 'bootstrap-will_paginate',    '1.0.0'
 gem 'factory_bot',                '~> 6.2'
 gem 'dotenv',                     '~> 2.1', '>= 2.1.1'
+gem "image_processing",           '~> 1.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
