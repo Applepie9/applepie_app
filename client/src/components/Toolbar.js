@@ -1,7 +1,6 @@
 import React from "react";
 import { loggedIn } from "../utils/auth";
 import Logout from "./auth/Logout";
-import "../index.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 
 export default function Toolbar() {

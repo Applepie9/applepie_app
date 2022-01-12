@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import { Card, CardGroup } from "react-bootstrap";
 
 export default function NewRecipe() {
   let navigate = useNavigate();
@@ -48,12 +49,7 @@ export default function NewRecipe() {
       }}
       onSubmit={handleSubmit}
     >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+      <div>
         <label style={{ padding: "10px" }}>
           Title:
           <textarea
@@ -65,32 +61,46 @@ export default function NewRecipe() {
             required
           />
         </label>
-        <label style={{ padding: "10px" }}>
-          Ingredients:
-          <textarea
-            type="text"
-            name="ingredients"
-            placeholder="Add Ingredients"
-            value={recipe.ingredients}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label style={{ padding: "10px" }}>
-          Description:
-          <textarea
-            type="text"
-            name="content"
-            placeholder="Add Description"
-            value={recipe.content}
-            onChange={handleChange}
-            required
-          />
-        </label>
       </div>
-      <button type="submit" style={{ margin: "0px 0px 0px 10px" }}>
-        Save
-      </button>
+
+      <div style={{ color: "black" }}>
+          <CardGroup className="grid space-around">
+            <Card border="secondary" style={{ width: "18rem" }}>
+              <Card.Header style={{ fontSize: "25px" }}>
+                Ingredients
+              </Card.Header>
+              <Card.Body>
+                <textarea
+                  type="text"
+                  name="ingredients"
+                  placeholder="Add Ingredients"
+                  value={recipe.ingredients}
+                  onChange={handleChange}
+                  required
+                />
+              </Card.Body>
+            </Card>
+
+            <Card border="secondary" style={{ width: "30rem" }}>
+              <Card.Header style={{ fontSize: "25px" }}>
+                Instructions
+              </Card.Header>
+              <Card.Body>
+                <textarea
+                  type="text"
+                  name="content"
+                  placeholder="Add Description"
+                  value={recipe.content}
+                  onChange={handleChange}
+                  required
+                />
+              </Card.Body>
+            </Card>
+          </CardGroup>
+          <button type="submit" style={{ margin: "20px 30px 0px 10px", float: "right" }}>
+            Save
+          </button>
+        </div>
     </form>
   );
 }

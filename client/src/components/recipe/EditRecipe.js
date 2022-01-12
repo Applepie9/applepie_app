@@ -4,6 +4,8 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import UploadPhoto from "./UploadPhoto";
 import CardComp from "./CardComp";
+import { Card, CardGroup } from "react-bootstrap";
+
 
 export default function NewRecipe() {
   let { recipeId } = useParams();
@@ -71,7 +73,15 @@ export default function NewRecipe() {
         <CardComp
           key={recipe.id}
           recipeimage={recipe.photo_url}
-          recipename={recipe.title}
+          recipename={
+            <textarea
+              type="text"
+              name="title"
+              defaultValue={recipe.title}
+              onChange={handleChange}
+              required
+            />
+          }
           className="bg-dark text-white"
           style={{
             width: "500px",
@@ -89,46 +99,42 @@ export default function NewRecipe() {
         }}
         onSubmit={handleSubmit}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <label style={{ padding: "10px" }}>
-            Title:
-            <textarea
-              type="text"
-              name="title"
-              defaultValue={recipe.title}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <label style={{ padding: "10px" }}>
-            Ingredients:
-            <textarea
-              type="text"
-              name="ingredients"
-              defaultValue={recipe.ingredients}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <label style={{ padding: "10px" }}>
-            Description:
-            <textarea
-              type="text"
-              name="content"
-              defaultValue={recipe.content}
-              onChange={handleChange}
-              required
-            />
-          </label>
+        <div style={{ color: "black" }}>
+          <CardGroup className="grid space-around">
+            <Card border="secondary" style={{ width: "18rem" }}>
+              <Card.Header style={{ fontSize: "25px" }}>
+                Ingredients
+              </Card.Header>
+              <Card.Body>
+                <textarea
+                  type="text"
+                  name="ingredients"
+                  defaultValue={recipe.ingredients}
+                  onChange={handleChange}
+                  required
+                />
+              </Card.Body>
+            </Card>
+
+            <Card border="secondary" style={{ width: "30rem" }}>
+              <Card.Header style={{ fontSize: "25px" }}>
+                Instructions
+              </Card.Header>
+              <Card.Body>
+                <textarea
+                  type="text"
+                  name="content"
+                  defaultValue={recipe.content}
+                  onChange={handleChange}
+                  required
+                />
+              </Card.Body>
+            </Card>
+          </CardGroup>
+          <button type="submit" style={{ margin: "0px 0px 0px 10px" }}>
+            Save
+          </button>
         </div>
-        <button type="submit" style={{ margin: "0px 0px 0px 10px" }}>
-          Save
-        </button>
       </form>
     </div>
   );

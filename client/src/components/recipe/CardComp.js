@@ -1,6 +1,5 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import "../../index.css";
 
 export default function CardComp({ recipename, recipeimage, onClick }) {
   return (

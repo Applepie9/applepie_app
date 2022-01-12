@@ -31,7 +31,7 @@ export default function RecipeHighlight() {
   return (
     <div style={{ margin: "50px 15px 0px 15px", padding: "10px" }}>
       <React.Fragment>
-        Try out this recipe:
+        Try this recipe out
         <Card key={recipe.id} onClick={() => navigate(`/recipe/${recipe.id}`)}>
           <Card.Img variant="top" src={recipe.photo_url} />
           <Card.Body>

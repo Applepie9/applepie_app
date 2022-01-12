@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardGroup } from "react-bootstrap";
+import { Card, CardGroup, Button } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 import CardComp from "./CardComp";
 import { loggedIn } from "../../utils/auth";
+import ConfirmModal from "../ConfirmModal";
 
 export default function ShowRecipe() {
   let { recipeId } = useParams();
@@ -32,8 +33,7 @@ export default function ShowRecipe() {
 
   const handleDelete = (event) => {
     axios
-      .delete(`http://localhost:3000/api/recipes/${recipeId}`,
-      {
+      .delete(`http://localhost:3000/api/recipes/${recipeId}`, {
         withCredentials: true,
         headers,
       })
@@ -58,7 +58,10 @@ export default function ShowRecipe() {
           <button onClick={() => navigate(`/recipe/${recipe.id}/edit`)}>
             Edit
           </button>
-          <button onClick={handleDelete}>Delete</button>
+          <ConfirmModal
+            buttonName="Delete"
+            handleSomething={handleDelete}
+          ></ConfirmModal>
         </>
       ) : (
         <></>
