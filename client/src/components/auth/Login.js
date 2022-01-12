@@ -1,46 +1,55 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Cookies from 'js-cookie';
-import env from "react-dotenv";
+import Cookies from "js-cookie";
 
 export default function Login() {
-  const [credentials, setCredentials] = useState({email: "", password: ""});
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [failure, setFailure] = useState(false);
 
   const handleChange = (event) => {
-    const newValue = { ...credentials, ...{ [event.target.name]: event.target.value } }
+    const newValue = {
+      ...credentials,
+      ...{ [event.target.name]: event.target.value },
+    };
+    console.log("valami")
     setCredentials(newValue);
-  }
+  };
 
   const handleSubmit = (event) => {
     axios
       .post(
-        `${env.SERVER_HOST}/api/sessions`,
+        `http://localhost:3000/api/sessions`,
         {
           email: credentials.email,
           password: credentials.password,
         },
-        { 
+        {
           withCredentials: true,
           headers: {
-            'Client-Id': env.CLIENT_UID
-          }
+            "Client-Id": 'ON5KyEPfHZeSxUVc9umKP9X3UlLpbOoYpu0AnlD-wV4',
+          },
         }
       )
-      .then(response => {
-        Cookies.set("session", response.data.user.access_token, { expires: 7 })
-        window.location.href = '/';
+      .then((response) => {
+        Cookies.set("session", response.data.user.access_token, { expires: 7 });
+        window.location.href = "/";
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("login error", error);
-        setFailure(true)
+        setFailure(true);
       });
     event.preventDefault();
-  }
+  };
 
   return (
-    <div>
-      { failure && <label>Something went wrong</label> }
+    <div
+      style={{
+        margin: "0px 15px 30px 15px",
+        border: "20px",
+        padding: "10px"
+      }}
+    >
+      {failure && <label>Something went wrong</label>}
       <form onSubmit={handleSubmit}>
         <input
           type="email"

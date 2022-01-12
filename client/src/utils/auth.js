@@ -1,5 +1,5 @@
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 
 export function loggedIn() {
-  return Cookies.get("session") !== undefined
+  return Cookies.get("session") !== undefined;
 }
