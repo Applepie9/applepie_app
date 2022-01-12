@@ -10,15 +10,16 @@ export default function ShowRecipe() {
   let { recipeId } = useParams();
   let navigate = useNavigate();
   const [recipe, setRecipe] = useState({});
+  const headers = {
+    Authorization: `Bearer ${Cookies.get("session")}`,
+    Accept: "application/json",
+  };
 
   useEffect(() => {
     axios
       .get(`http://localhost:3000/api/recipes/${recipeId}`, {
         withCredentials: true,
-        headers: {
-          Authorization: `Bearer ${Cookies.get("session")}`,
-          Accept: "application/json",
-        },
+        headers,
       })
       .then(function (response) {
         setRecipe(response.data);
@@ -28,6 +29,22 @@ export default function ShowRecipe() {
       })
       .then(function () {});
   }, []);
+
+  const handleDelete = (event) => {
+    axios
+      .delete(`http://localhost:3000/api/recipes/${recipeId}`,
+      {
+        withCredentials: true,
+        headers,
+      })
+      .then(function () {
+        navigate(`/`);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .then(function () {});
+  };
 
   return (
     <div
@@ -41,7 +58,7 @@ export default function ShowRecipe() {
           <button onClick={() => navigate(`/recipe/${recipe.id}/edit`)}>
             Edit
           </button>
-          <button>Delete</button>
+          <button onClick={handleDelete}>Delete</button>
         </>
       ) : (
         <></>

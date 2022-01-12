@@ -58,9 +58,7 @@ module Api
     # DELETE /recipes/1.json
     def destroy
       @recipe.destroy
-      respond_to do |format|
-        format.json { head :no_content }
-      end
+      render json: :no_content
     end
 
     private
