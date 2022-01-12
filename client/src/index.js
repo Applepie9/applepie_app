@@ -12,12 +12,13 @@ import RecipeTiles from "./components/recipe/RecipeTiles";
 import RecipeHighlight from "./components/recipe/RecipeHighlight";
 import NewRecipe from "./components/recipe/NewRecipe";
 import EditRecipe from "./components/recipe/EditRecipe";
+import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
   <BrowserRouter>
     <Toolbar />
     <Routes>
-      <Route exact path="/" element={<div> <RecipeHighlight/>, <RecipeTiles /> </div>}/>
+      <Route exact path="/" element={<div> <RecipeHighlight/><RecipeTiles /> </div>}/>
       <Route path="/recipe/new" element={<NewRecipe />} />
       <Route exact path="/recipe/:recipeId" element={<ShowRecipe />} />
       <Route path="/recipe/:recipeId/edit" element={<EditRecipe />} />

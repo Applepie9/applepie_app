@@ -30,7 +30,7 @@ export default function NewRecipe() {
         }
       )
       .then(function (response) {
-        navigate(`/recipe/${response.data.id}`);
+        navigate(`/recipe/${response.data.id}/edit`);
       })
       .catch(function (error) {
         console.log(error);

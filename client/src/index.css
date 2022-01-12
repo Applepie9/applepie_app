@@ -2,8 +2,8 @@ html, body, #app {
   margin: 0;
   height: 100%;
   width: 100%;
-  color: white;
   text-decoration: none;
+  background: white;
 }
 
 a:link {
@@ -48,35 +48,7 @@ code {
   padding: 20px;
 }
 
-.card a {
-  text-decoration: none;
-}
-
-.card img {
-  margin-bottom: 8px;
-}
-
-.bg-dark {
-  background: rgb(36, 40, 42);
-  border-radius: 3px;
-}
-
 .card-list {
   margin: 20px 0;
   font-size: 20px;
-}
-
-.card-list li {
-  display: flex;
-  align-items: center;
-  margin: 10px;
-}
-
-.card-list svg {
-  margin-right: 10px;
-}
-
-.card-list a {
-  font-weight: 500;
-  color: inherit;
 }

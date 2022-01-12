@@ -2,7 +2,7 @@ module Api
   class RecipesController < Api::ApplicationController
     respond_to :json
     before_action :set_recipe, only: [:show, :update, :upload, :destroy]
-    # skip_before_action :doorkeeper_authorize!
+    skip_before_action :doorkeeper_authorize!, only: [:index, :show]
 
     # GET /recipes
     # GET /recipes.json

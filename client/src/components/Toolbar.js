@@ -6,7 +6,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 
 export default function Toolbar() {
   return (
-    <Navbar bg="dark" fixed="top" variant="dark" style={{padding: "10px", margin: "25px 25px 30px 25px"}}>
+    <Navbar bg="dark" variant="dark" style={{padding: "10px", margin: "25px 25px 10px 25px"}}>
       <Container>
         <Navbar.Brand href="/">applepie-app</Navbar.Brand>
         <Nav style={{float: "right"}}>

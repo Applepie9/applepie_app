@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardGroup } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 import CardComp from "./CardComp";
+import { loggedIn } from "../../utils/auth";
 
 export default function ShowRecipe() {
   let { recipeId } = useParams();
+  let navigate = useNavigate();
   const [recipe, setRecipe] = useState({});
 
   useEffect(() => {
@@ -19,16 +21,12 @@ export default function ShowRecipe() {
         },
       })
       .then(function (response) {
-        // handle success
         setRecipe(response.data);
       })
       .catch(function (error) {
-        // handle error
         console.log(error);
       })
-      .then(function () {
-        // always executed
-      });
+      .then(function () {});
   }, []);
 
   return (
@@ -38,11 +36,20 @@ export default function ShowRecipe() {
         padding: "10px",
       }}
     >
+      {loggedIn() ? (
+        <>
+          <button onClick={() => navigate(`/recipe/${recipe.id}/edit`)}>
+            Edit
+          </button>
+          <button>Delete</button>
+        </>
+      ) : (
+        <></>
+      )}
       <CardComp
         key={recipe.id}
         recipeimage={recipe.photo_url}
         recipename={recipe.title}
-
         className="bg-dark text-white"
         style={{
           width: "500px",
@@ -62,9 +69,7 @@ export default function ShowRecipe() {
           <Card border="secondary" style={{ width: "30rem" }}>
             <Card.Header style={{ fontSize: "25px" }}>Instructions</Card.Header>
             <Card.Body>
-              <Card.Text>
-                <li>{recipe.content}</li>
-              </Card.Text>
+              <Card.Text>{recipe.content}</Card.Text>
             </Card.Body>
           </Card>
         </CardGroup>

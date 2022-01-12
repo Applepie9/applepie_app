@@ -71,23 +71,30 @@ export default function NewRecipe() {
         <CardComp
           key={recipe.id}
           recipeimage={recipe.photo_url}
-          recipename={<UploadPhoto />}
+          recipename={recipe.title}
           className="bg-dark text-white"
           style={{
             width: "500px",
             padding: "40px",
+            textColor: "white",
           }}
         ></CardComp>
       </div>
-
-      <div
+      <UploadPhoto />
+      <form
         style={{
           color: "black",
-          diplay: "flex",
-          flexDirection: "column",
+          margin: "0px 15px 0px 20px",
+          padding: "10px",
         }}
+        onSubmit={handleSubmit}
       >
-        <form onSubmit={handleSubmit}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
           <label style={{ padding: "10px" }}>
             Title:
             <textarea
@@ -118,11 +125,11 @@ export default function NewRecipe() {
               required
             />
           </label>
-          <button type="submit" style={{ margin: "0px 0px 0px 10px" }}>
-            Save
-          </button>
-        </form>
-      </div>
+        </div>
+        <button type="submit" style={{ margin: "0px 0px 0px 10px" }}>
+          Save
+        </button>
+      </form>
     </div>
   );
 }

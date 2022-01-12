@@ -35,8 +35,10 @@ export default function RecipeTiles() {
         margin: "0px 15px 0px 15px",
         padding: "10px",
         textAlign: "center",
+        color: "white"
       }}
     >
+      <h1 style={{color: "black"}}>Latest recipes</h1>
       <CardGroup className=" grid space-around card-list">
         <React.Fragment>
           {recipes
@@ -48,7 +50,7 @@ export default function RecipeTiles() {
                 recipename={data.title}
               ></CardComp>
             ))
-            .slice(-6)
+            .slice(-8)
             .reverse()}
         </React.Fragment>
       </CardGroup>

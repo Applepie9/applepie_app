@@ -27,7 +27,7 @@ export default function UploadPhoto() {
         headers,
       })
       .then(function (response) {
-        navigate(`/recipe/${response.data.id}`);
+        // navigate(`/recipe/${response.data.id}`);
         window.location.reload();
       })
       .catch(function (error) {
