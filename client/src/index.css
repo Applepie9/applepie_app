@@ -1,21 +1,16 @@
-html, body, #app {
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  text-decoration: none;
-  background: white;
+:root{
+  --base: #2F4F4F;
+  --main: #698E8E;
+  --accent: #4F2F2F;
+  --middleish: #889A9A;
+  --light: #C3CCCC;
+  --dark: #223A3A;
 }
 
-a:link {
-  color: white;
-}
-
-a:visited {
-  color: white;
-}
-
-body {
-  margin: 0;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;

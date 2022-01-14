@@ -7,11 +7,11 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import NotFound from "./components/NotFound";
 import Toolbar from "./components/Toolbar";
-import ShowRecipe from "./components/recipe/ShowRecipe";
-import RecipeTiles from "./components/recipe/RecipeTiles";
-import RecipeHighlight from "./components/recipe/RecipeHighlight";
-import NewRecipe from "./components/recipe/NewRecipe";
-import EditRecipe from "./components/recipe/EditRecipe";
+import ShowRecipe from "./components/recipe_related/ShowRecipe";
+import RecipeTiles from "./components/recipe_related/RecipeTiles";
+import RecipeHighlight from "./components/recipe_related/RecipeHighlight";
+import NewRecipe from "./components/recipe_related/NewRecipe";
+import EditRecipe from "./components/recipe_related/EditRecipe";
 import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
@@ -34,3 +34,5 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
