@@ -49,7 +49,7 @@ export default function ShowRecipe() {
   return (
     <div
       style={{
-        margin: "0px 15px 0px 15px",
+        margin: "100px 15px 0px 15px",
         padding: "10px",
       }}
     >

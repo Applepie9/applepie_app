@@ -65,7 +65,7 @@ export default function NewRecipe() {
       style={{
         display: "flex",
         flexDirection: "column",
-        margin: "0px 0px 0px 20px",
+        margin: "100px 0px 0px 20px",
         padding: "10px",
       }}
     >

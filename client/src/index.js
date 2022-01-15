@@ -27,7 +27,7 @@ ReactDOM.render(
       <Route path="/register" element={<Register />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
-    <Footer/>
+    <Footer />
   </BrowserRouter>,
   document.getElementById("root")
 );

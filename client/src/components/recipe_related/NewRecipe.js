@@ -44,7 +44,7 @@ export default function NewRecipe() {
     <form
       style={{
         color: "black",
-        margin: "0px 15px 0px 20px",
+        margin: "100px 15px 50px 20px",
         padding: "10px",
       }}
       onSubmit={handleSubmit}
@@ -97,7 +97,7 @@ export default function NewRecipe() {
               </Card.Body>
             </Card>
           </CardGroup>
-          <button type="submit" style={{ margin: "20px 30px 0px 10px", float: "right" }}>
+          <button type="submit" style={{ margin: "20px 30px 10px 10px", float: "right" }}>
             Save
           </button>
         </div>

@@ -44,7 +44,7 @@ export default function Login() {
   return (
     <div
       style={{
-        margin: "0px 15px 30px 15px",
+        margin: "100px 15px 30px 15px",
         border: "20px",
         padding: "10px"
       }}
