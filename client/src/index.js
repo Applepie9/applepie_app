@@ -7,6 +7,7 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import NotFound from "./components/NotFound";
 import Toolbar from "./components/Toolbar";
+import Footer from "./components/Footer";
 import ShowRecipe from "./components/recipe_related/ShowRecipe";
 import RecipeTiles from "./components/recipe_related/RecipeTiles";
 import RecipeHighlight from "./components/recipe_related/RecipeHighlight";
@@ -26,6 +27,7 @@ ReactDOM.render(
       <Route path="/register" element={<Register />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
+    <Footer/>
   </BrowserRouter>,
   document.getElementById("root")
 );

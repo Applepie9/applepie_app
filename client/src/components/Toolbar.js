@@ -23,7 +23,7 @@ export default function Toolbar() {
   window.addEventListener("resize", showButton);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" style={{position: 'fixed'}}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
           <span>applepie-app</span>
