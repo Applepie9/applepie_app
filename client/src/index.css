@@ -5,6 +5,12 @@
   --middleish: #889A9A;
   --light: #C3CCCC;
   --dark: #223A3A;
+  --color-primary: #009579;
+  --color-primary-dark: #007f67;
+  --color-secondary: #252c6a;
+  --color-error: #cc3333;
+  --color-success: #4bb544;
+  --border-radius: 4px;
 }
 
 * {
@@ -16,6 +22,10 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background-color: var(--light);
 }
 
 code {

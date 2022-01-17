@@ -29,13 +29,13 @@ export default function RecipeHighlight() {
   }, []);
 
   return (
-    <div style={{ margin: "100px 15px 0px 15px", padding: "10px" }}>
+    <div style={{ background: "var(--light)", margin: "100px 0px 0px 0px", padding: "20px", display: "flex", flexDirection: "column", alignItems: "center"}}>
       <React.Fragment>
         Try this recipe out
-        <Card key={recipe.id} onClick={() => navigate(`/recipe/${recipe.id}`)}>
+        <Card key={recipe.id} onClick={() => navigate(`/recipe/${recipe.id}`)} style={{background: "var(--accent)"}}>
           <Card.Img variant="top" src={recipe.photo_url} />
           <Card.Body>
-            <Card.Text>{recipe.title}</Card.Text>
+            <Card.Text style={{color: "var(--light)"}}>{recipe.title}</Card.Text>
           </Card.Body>
         </Card>
       </React.Fragment>

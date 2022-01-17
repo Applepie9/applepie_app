@@ -49,8 +49,9 @@ export default function ShowRecipe() {
   return (
     <div
       style={{
-        margin: "100px 15px 0px 15px",
-        padding: "10px",
+        margin: "100px 0px 0px 0px",
+        padding: "20px",
+        background: "var(--light)"
       }}
     >
       {loggedIn() ? (

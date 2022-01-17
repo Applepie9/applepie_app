@@ -8,6 +8,10 @@
   align-items: center;
   height: 80px;
   border-top: 3px solid var(--middleish);
+
+  position: absolute;
+  bottom: -1;
+  width: 100%;
 }
 
 .footer-links {

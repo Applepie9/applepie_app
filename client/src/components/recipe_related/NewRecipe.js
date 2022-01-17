@@ -44,8 +44,10 @@ export default function NewRecipe() {
     <form
       style={{
         color: "black",
-        margin: "100px 15px 50px 20px",
-        padding: "10px",
+        margin: "100px 0 0 0",
+        padding: "20px",
+        background: "var(--light)",
+        alignItems: "center",
       }}
       onSubmit={handleSubmit}
     >
@@ -64,43 +66,39 @@ export default function NewRecipe() {
       </div>
 
       <div style={{ color: "black" }}>
-          <CardGroup className="grid space-around">
-            <Card border="secondary" style={{ width: "18rem" }}>
-              <Card.Header style={{ fontSize: "25px" }}>
-                Ingredients
-              </Card.Header>
-              <Card.Body>
-                <textarea
-                  type="text"
-                  name="ingredients"
-                  placeholder="Add Ingredients"
-                  value={recipe.ingredients}
-                  onChange={handleChange}
-                  required
-                />
-              </Card.Body>
-            </Card>
+        <CardGroup className="grid space-around">
+          <Card border="secondary" style={{ width: "18rem" }}>
+            <Card.Header style={{ fontSize: "25px" }}>Ingredients</Card.Header>
+            <Card.Body>
+              <textarea
+                type="text"
+                name="ingredients"
+                placeholder="Add Ingredients"
+                value={recipe.ingredients}
+                onChange={handleChange}
+                required
+              />
+            </Card.Body>
+          </Card>
 
-            <Card border="secondary" style={{ width: "30rem" }}>
-              <Card.Header style={{ fontSize: "25px" }}>
-                Instructions
-              </Card.Header>
-              <Card.Body>
-                <textarea
-                  type="text"
-                  name="content"
-                  placeholder="Add Description"
-                  value={recipe.content}
-                  onChange={handleChange}
-                  required
-                />
-              </Card.Body>
-            </Card>
-          </CardGroup>
-          <button type="submit" style={{ margin: "20px 30px 10px 10px", float: "right" }}>
-            Save
-          </button>
+          <Card border="secondary" style={{ width: "30rem" }}>
+            <Card.Header style={{ fontSize: "25px" }}>Instructions</Card.Header>
+            <Card.Body>
+              <textarea
+                type="text"
+                name="content"
+                placeholder="Add Description"
+                value={recipe.content}
+                onChange={handleChange}
+                required
+              />
+            </Card.Body>
+          </Card>
+        </CardGroup>
+        <div style={{ margin: "20px 30px 50px 10px", }}>
+          <button type="submit" style={{float: "right" }}>Save</button>
         </div>
+      </div>
     </form>
   );
 }

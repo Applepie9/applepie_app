@@ -32,7 +32,7 @@ export default function RecipeTiles() {
     <div
       className="space-around"
       style={{
-        margin: "0px 15px 0px 15px",
+        background: "var(--light)",
         padding: "10px",
         textAlign: "center",
         color: "white"

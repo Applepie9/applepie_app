@@ -4,8 +4,9 @@ export default function NotFound() {
   return (
     <div
       style={{
-        margin: "0px 15px 0px 15px",
-        padding: "10px",
+        background: "var(--light)",
+        margin: "80px 0 0 0",
+        padding: "20px",
         color: "black",
         fontSize: "30px",
         textAlign: "center",

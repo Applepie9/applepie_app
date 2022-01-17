@@ -6,7 +6,6 @@ import UploadPhoto from "./UploadPhoto";
 import CardComp from "./CardComp";
 import { Card, CardGroup } from "react-bootstrap";
 
-
 export default function NewRecipe() {
   let { recipeId } = useParams();
   let navigate = useNavigate();
@@ -63,13 +62,14 @@ export default function NewRecipe() {
   return (
     <div
       style={{
+        background: "var(--light)",
         display: "flex",
         flexDirection: "column",
-        margin: "100px 0px 0px 20px",
-        padding: "10px",
+        margin: "100px 0 0 0",
+        padding: "20px 0 20px 0",
       }}
     >
-      <div>
+      <div style={{ padding: "0 0 0 20px" }}>
         <CardComp
           key={recipe.id}
           recipeimage={recipe.photo_url}
@@ -90,16 +90,16 @@ export default function NewRecipe() {
           }}
         ></CardComp>
       </div>
-      <UploadPhoto />
+      <div style={{ padding: "0 0 0 20px" }}>
+        <UploadPhoto />
+      </div>
       <form
         style={{
           color: "black",
-          margin: "0px 15px 0px 20px",
-          padding: "10px",
         }}
         onSubmit={handleSubmit}
       >
-        <div style={{ color: "black" }}>
+        <div style={{ color: "black", padding: "20px" }}>
           <CardGroup className="grid space-around">
             <Card border="secondary" style={{ width: "18rem" }}>
               <Card.Header style={{ fontSize: "25px" }}>
@@ -131,9 +131,11 @@ export default function NewRecipe() {
               </Card.Body>
             </Card>
           </CardGroup>
-          <button type="submit" style={{ margin: "0px 0px 0px 10px" }}>
-            Save
-          </button>
+          <div style={{ margin: "20px 30px 50px 10px" }}>
+            <button type="submit" style={{ float: "right" }}>
+              Save
+            </button>
+          </div>
         </div>
       </form>
     </div>

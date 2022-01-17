@@ -48,11 +48,11 @@ export default function Toolbar() {
                   New Recipe
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link to="/" className="nav-links" onClick={closeMobileMenu}>
                   Profile
                 </Link>
-              </li>
+              </li> */}
               <li
                 className="nav-item"
                 className="nav-links"
