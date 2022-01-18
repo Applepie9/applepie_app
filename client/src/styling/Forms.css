@@ -124,3 +124,26 @@ body {
   color: var(--dark);
   text-decoration: underline;
 }
+
+.recipeform_button_container {
+  display: flex;
+  justify-content: right;
+}
+
+.recipeform_button {
+  margin: 30px 10px 20px 10px;
+  padding: 1rem 3rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--dark);
+  border: none;
+  border-radius: var(--border-radius);
+  outline: none;
+  cursor: pointer;
+  background: var(--main);
+}
+
+.recipeform_button:hover {
+  background: var(--base);
+  color: var(--light);
+}

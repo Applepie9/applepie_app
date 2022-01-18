@@ -131,8 +131,8 @@ export default function NewRecipe() {
               </Card.Body>
             </Card>
           </CardGroup>
-          <div style={{ margin: "20px 30px 50px 10px" }}>
-            <button type="submit" style={{ float: "right" }}>
+          <div className="recipeform_button_container">
+            <button type="submit" className="recipeform_button">
               Save
             </button>
           </div>

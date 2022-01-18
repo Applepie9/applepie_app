@@ -54,8 +54,7 @@ export default function Toolbar() {
                 </Link>
               </li> */}
               <li
-                className="nav-item"
-                className="nav-links"
+                className="nav-item nav-links"
                 onClick={closeMobileMenu}
               >
                 <Logout />

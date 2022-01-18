@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import "../../styling/LoginRegister.css";
+import "../../styling/Forms.css";
 
 export default function Register() {
   const [credentials, setCredentials] = useState({ email: "", password: "" });

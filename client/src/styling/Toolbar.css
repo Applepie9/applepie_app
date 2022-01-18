@@ -78,6 +78,7 @@
   background-color: var(--dark);
   color: var(--light);
   border-bottom: 3px solid var(--middleish);
+  cursor: pointer;
 }
 
 .fa-bars {
@@ -159,7 +160,7 @@
     display: block;
     text-align: center;
     margin: 2rem auto;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     width: 80%;
     text-decoration: none;
     font-size: 1.5rem;
