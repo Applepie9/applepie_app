@@ -10,7 +10,7 @@
   border-top: 3px solid var(--middleish);
 
   position: absolute;
-  bottom: -1;
+  /* bottom: -1; */
   width: 100%;
 }
 

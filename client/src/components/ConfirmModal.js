@@ -9,7 +9,7 @@ export default function ConfirmModal({buttonName, handleSomething}) {
 
   return (
     <>
-      <button onClick={handleShow}>
+      <button onClick={handleShow} className="recipeform_button">
         {buttonName}
       </button>
 

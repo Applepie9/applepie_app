@@ -3,8 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 import UploadPhoto from "./UploadPhoto";
-import CardComp from "./CardComp";
-import { Card, CardGroup } from "react-bootstrap";
+import "../../styling/SingleRecipe.css";
 
 export default function NewRecipe() {
   let { recipeId } = useParams();
@@ -60,82 +59,80 @@ export default function NewRecipe() {
   };
 
   return (
-    <div
-      style={{
-        background: "var(--light)",
-        display: "flex",
-        flexDirection: "column",
-        margin: "100px 0 0 0",
-        padding: "20px 0 20px 0",
-      }}
-    >
-      <div style={{ padding: "0 0 0 20px" }}>
-        <CardComp
-          key={recipe.id}
-          recipeimage={recipe.photo_url}
-          recipename={
-            <textarea
-              type="text"
-              name="title"
-              defaultValue={recipe.title}
-              onChange={handleChange}
-              required
-            />
-          }
-          className="bg-dark text-white"
-          style={{
-            width: "500px",
-            padding: "40px",
-            textColor: "white",
-          }}
-        ></CardComp>
-      </div>
-      <div style={{ padding: "0 0 0 20px" }}>
-        <UploadPhoto />
-      </div>
+    <div className="page">
       <form
-        style={{
-          color: "black",
-        }}
         onSubmit={handleSubmit}
+        className="recipe-container container-fluid"
       >
-        <div style={{ color: "black", padding: "20px" }}>
-          <CardGroup className="grid space-around">
-            <Card border="secondary" style={{ width: "18rem" }}>
-              <Card.Header style={{ fontSize: "25px" }}>
-                Ingredients
-              </Card.Header>
-              <Card.Body>
+        <div className="row">
+          <div className="col-lg-5">
+            <img src={recipe.photo_url} className="show-img" />
+          </div>
+          <div className="col-lg-1"></div>
+          <div className="col-md-5 header-info-col" align="left">
+            <div>
+              <header>
+                <h1>
+                  <textarea
+                    type="text"
+                    name="title"
+                    defaultValue={recipe.title}
+                    onChange={handleChange}
+                    required
+                    className="titleform_input"
+                  />
+                </h1>
+                {/* <span className="abstract-text" align="left">
+                  {recipe.description}
+                </span> */}
+              </header>
+              <UploadPhoto />
+            </div>
+          </div>
+        </div>
+
+        <div className="row" style={{ alignItems: "left" }}>
+          <div className="col-md-1"></div>
+          <div className="col-lg-4 pt-4 content-container">
+            <section className="ingredient-list">
+              <h2>Ingredients</h2>
+              <ul className="list-unstyled pl-4 ">
                 <textarea
                   type="text"
                   name="ingredients"
                   defaultValue={recipe.ingredients}
                   onChange={handleChange}
                   required
+                  className="recipeform_input"
                 />
-              </Card.Body>
-            </Card>
-
-            <Card border="secondary" style={{ width: "30rem" }}>
-              <Card.Header style={{ fontSize: "25px" }}>
-                Instructions
-              </Card.Header>
-              <Card.Body>
-                <textarea
-                  type="text"
-                  name="content"
-                  defaultValue={recipe.content}
-                  onChange={handleChange}
-                  required
-                />
-              </Card.Body>
-            </Card>
-          </CardGroup>
-          <div className="recipeform_button_container">
-            <button type="submit" className="recipeform_button">
-              Save
-            </button>
+              </ul>
+            </section>
           </div>
+          <div className="col-md-1"></div>
+          <div className="col-md-5 pt-4 content-container" alignItems="left">
+            <section className="instruction-list">
+              <h2>Instructions</h2>
+              <textarea
+                type="text"
+                name="content"
+                defaultValue={recipe.content}
+                onChange={handleChange}
+                required
+                className="recipeform_input"
+              />
+              {/* <h3>Notes</h3>
+                <ul style={{ listStyle: "none" }}>
+                  <li>{recipe.notes}</li>
+                </ul> */}
+            </section>
+          </div>
+          <div className="col-md-1"></div>
+        </div>
+        <div className="recipeform_button_container">
+          <button type="submit" className="recipeform_button">
+            Save
+          </button>
+          <div className="col-md-1"></div>
         </div>
       </form>
     </div>

@@ -41,16 +41,7 @@ export default function NewRecipe() {
   };
 
   return (
-    <form
-      style={{
-        color: "black",
-        margin: "100px 0 0 0",
-        padding: "20px",
-        background: "var(--light)",
-        alignItems: "center",
-      }}
-      onSubmit={handleSubmit}
-    >
+    <form className="page" onSubmit={handleSubmit}>
       <div>
         <label style={{ padding: "10px" }}>
           Title:
@@ -96,7 +87,9 @@ export default function NewRecipe() {
           </Card>
         </CardGroup>
         <div className="recipeform_button_container">
-          <button type="submit" className="recipeform_button" >Save</button>
+          <button type="submit" className="recipeform_button">
+            Save
+          </button>
         </div>
       </div>
     </form>

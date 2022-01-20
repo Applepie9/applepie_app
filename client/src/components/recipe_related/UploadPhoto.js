@@ -38,14 +38,7 @@ export default function UploadPhoto() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{
-        padding: "0px",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
+    <form onSubmit={handleSubmit}>
       Upload Photo:
       <label>
         <input
@@ -58,7 +51,7 @@ export default function UploadPhoto() {
         />
       </label>
       <label>
-        <button type="submit" style={{ margin: "10px 0px 0px 0px" }}>
+        <button type="submit" className="recipeform_button">
           Upload
         </button>
       </label>

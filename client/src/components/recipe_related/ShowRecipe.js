@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardGroup, Button } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
-import CardComp from "./CardComp";
 import { loggedIn } from "../../utils/auth";
 import ConfirmModal from "../ConfirmModal";
+import "../../styling/SingleRecipe.css";
 
 export default function ShowRecipe() {
   let { recipeId } = useParams();
@@ -47,54 +46,80 @@ export default function ShowRecipe() {
   };
 
   return (
-    <div
-      style={{
-        margin: "100px 0px 0px 0px",
-        padding: "20px",
-        background: "var(--light)"
-      }}
-    >
-      {loggedIn() ? (
-        <>
-          <button onClick={() => navigate(`/recipe/${recipe.id}/edit`)}>
-            Edit
-          </button>
-          <ConfirmModal
-            buttonName="Delete"
-            handleSomething={handleDelete}
-          ></ConfirmModal>
-        </>
-      ) : (
-        <></>
-      )}
-      <CardComp
-        key={recipe.id}
-        recipeimage={recipe.photo_url}
-        recipename={recipe.title}
-        className="bg-dark text-white"
-        style={{
-          width: "500px",
-          padding: "40px",
-        }}
-      ></CardComp>
+    <article className="page">
+      <div className="recipe-container container-fluid">
+        {loggedIn() ? (
+          <div className="row, col-lg-4 edit_del_btn_container">
+            <div className="">
+              <button
+                onClick={() => navigate(`/recipe/${recipe.id}/edit`)}
+                className="recipeform_button"
+              >
+                Edit
+              </button>
+            </div>
+            <div className="col-md-3">
+              <ConfirmModal
+                buttonName="Delete"
+                handleSomething={handleDelete}
+              ></ConfirmModal>
+            </div>
+          </div>
+        ) : (
+          <></>
+        )}
 
-      <div style={{ color: "black" }}>
-        <CardGroup className="grid space-around">
-          <Card border="secondary" style={{ width: "18rem" }}>
-            <Card.Header style={{ fontSize: "25px" }}>Ingredients</Card.Header>
-            <Card.Body>
-              <Card.Text>{recipe.ingredients}</Card.Text>
-            </Card.Body>
-          </Card>
+        <div className="row">
+          <div className="col-lg-5">
+            <img
+              src={recipe.photo_url}
+              alt={recipe.title}
+              className="show-img"
+            />
+          </div>
+          <div className="col-lg-1"></div>
+          <div className="col-lg-5 header-info-col" align="left">
+            <div>
+              <header>
+                <h1>{recipe.title}</h1>
+                <span className="abstract-text" align="left">
+                  {recipe.description}
+                </span>
+              </header>
+            </div>
+          </div>
+        </div>
 
-          <Card border="secondary" style={{ width: "30rem" }}>
-            <Card.Header style={{ fontSize: "25px" }}>Instructions</Card.Header>
-            <Card.Body>
-              <Card.Text>{recipe.content}</Card.Text>
-            </Card.Body>
-          </Card>
-        </CardGroup>
+        <div className="row" style={{ alignItems: "left" }}>
+          <div className="col-md-1"></div>
+          <div className="col-lg-4 pt-4 content-container">
+            <section className="ingredient-list">
+              <h2>Ingredients</h2>
+              <ul className="list-unstyled pl-4 ">
+                {/* MAP */}
+                <li>
+                  <div style={{ display: "inline" }}>{recipe.ingredients}</div>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div className="col-md-1"></div>
+          <div className="col-md-5 pt-4 content-container">
+            <section className="instruction-list">
+              <h2>Instructions</h2>
+              {/* MAP */}
+              <ol>
+                <li>{recipe.content}</li>
+              </ol>
+              {/* <h3>Notes</h3>
+                <ul style={{ listStyle: "none" }}>
+                  <li>{recipe.notes}</li>
+                </ul> */}
+            </section>
+          </div>
+          <div className="col-md-1"></div>
+        </div>
       </div>
-    </div>
+    </article>
   );
 }

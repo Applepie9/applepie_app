@@ -29,17 +29,7 @@ export default function RecipeHighlight() {
   }, []);
 
   return (
-    <div
-      className="card-container"
-      style={{
-        background: "var(--light)",
-        margin: "100px 0px 0px 0px",
-        padding: "20px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
+    <div className="card-container page">
       <React.Fragment>
         <h1 style={{ color: "black" }}>Try this recipe out</h1>
         <Card
@@ -47,11 +37,13 @@ export default function RecipeHighlight() {
           onClick={() => navigate(`/recipe/${recipe.id}`)}
           style={{ background: "var(--accent)" }}
         >
-          <Card.Img variant="top" className="polaroid-img" src={recipe.photo_url} />
+          <Card.Img
+            variant="top"
+            className="polaroid-img"
+            src={recipe.photo_url}
+          />
           <Card.Body>
-            <Card.Text className="polaroid-title">
-              {recipe.title}
-            </Card.Text>
+            <Card.Text className="polaroid-title">{recipe.title}</Card.Text>
           </Card.Body>
         </Card>
       </React.Fragment>
