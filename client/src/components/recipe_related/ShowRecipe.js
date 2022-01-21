@@ -46,80 +46,74 @@ export default function ShowRecipe() {
   };
 
   return (
-    <article className="page">
-      <div className="recipe-container container-fluid">
-        {loggedIn() ? (
-          <div className="row, col-lg-4 edit_del_btn_container">
-            <div className="">
-              <button
-                onClick={() => navigate(`/recipe/${recipe.id}/edit`)}
-                className="recipeform_button"
-              >
-                Edit
-              </button>
-            </div>
-            <div className="col-md-3">
-              <ConfirmModal
-                buttonName="Delete"
-                handleSomething={handleDelete}
-              ></ConfirmModal>
-            </div>
+    <div className="page recipe-container container-fluid">
+      {loggedIn() ? (
+        <div className="row, col-lg-4 edit_del_btn_container">
+          <div className="">
+            <button
+              onClick={() => navigate(`/recipe/${recipe.id}/edit`)}
+              className="recipeform_button"
+            >
+              Edit
+            </button>
           </div>
-        ) : (
-          <></>
-        )}
-
-        <div className="row">
-          <div className="col-lg-5">
-            <img
-              src={recipe.photo_url}
-              alt={recipe.title}
-              className="show-img"
-            />
-          </div>
-          <div className="col-lg-1"></div>
-          <div className="col-lg-5 header-info-col" align="left">
-            <div>
-              <header>
-                <h1>{recipe.title}</h1>
-                <span className="abstract-text" align="left">
-                  {recipe.description}
-                </span>
-              </header>
-            </div>
+          <div className="col-md-3">
+            <ConfirmModal
+              buttonName="Delete"
+              handleSomething={handleDelete}
+            ></ConfirmModal>
           </div>
         </div>
+      ) : (
+        <></>
+      )}
 
-        <div className="row" style={{ alignItems: "left" }}>
-          <div className="col-md-1"></div>
-          <div className="col-lg-4 pt-4 content-container">
-            <section className="ingredient-list">
-              <h2>Ingredients</h2>
-              <ul className="list-unstyled pl-4 ">
-                {/* MAP */}
-                <li>
-                  <div style={{ display: "inline" }}>{recipe.ingredients}</div>
-                </li>
-              </ul>
-            </section>
+      <div className="row">
+        <div className="col-lg-5">
+          <img src={recipe.photo_url} alt={recipe.title} className="show-img" />
+        </div>
+        <div className="col-lg-1"></div>
+        <div className="col-lg-5 header-info-col" align="left">
+          <div>
+            <header>
+              <h1>{recipe.title}</h1>
+              <span className="abstract-text" align="left">
+                {recipe.description}
+              </span>
+            </header>
           </div>
-          <div className="col-md-1"></div>
-          <div className="col-md-5 pt-4 content-container">
-            <section className="instruction-list">
-              <h2>Instructions</h2>
+        </div>
+      </div>
+
+      <div className="row" style={{ alignItems: "left" }}>
+        <div className="col-md-1"></div>
+        <div className="col-lg-4 pt-4 content-container">
+          <section className="ingredient-list">
+            <h2>Ingredients</h2>
+            <ul className="list-unstyled pl-4 ">
               {/* MAP */}
-              <ol>
-                <li>{recipe.content}</li>
-              </ol>
-              {/* <h3>Notes</h3>
+              <li>
+                <div style={{ display: "inline" }}>{recipe.ingredients}</div>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div className="col-md-1"></div>
+        <div className="col-md-5 pt-4 content-container">
+          <section className="instruction-list">
+            <h2>Instructions</h2>
+            {/* MAP */}
+            <ol>
+              <li>{recipe.content}</li>
+            </ol>
+            {/* <h3>Notes</h3>
                 <ul style={{ listStyle: "none" }}>
                   <li>{recipe.notes}</li>
                 </ul> */}
-            </section>
-          </div>
-          <div className="col-md-1"></div>
+          </section>
         </div>
+        <div className="col-md-1"></div>
       </div>
-    </article>
+    </div>
   );
 }

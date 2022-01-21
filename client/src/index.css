@@ -48,7 +48,7 @@ code {
 
 .page {
   background: var(--light);
-  margin-top: 100px;
+  margin-top: 80px;
   padding: 20px;
   align-items: center;
 }
@@ -129,8 +129,8 @@ img {
 .col-xl-auto {
   position: relative;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 12px;
+  padding-left: 12px;
 }
 
 article,

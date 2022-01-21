@@ -4,8 +4,6 @@
   padding-right: 5%;
   padding-left: 5%;
   max-width: 100rem;
-  padding-top: 50px;
-  padding-top: 0;
 }
 
 .container-fluid {
@@ -19,9 +17,10 @@
 .row {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 1rem;
   margin-right: -15px;
   margin-left: -15px;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .show-img {
@@ -32,7 +31,7 @@
 
 .header-info-col {
   margin-right: 10px;
-  /* display: flex; */
+  display: flex;
   align-items: center;
   flex-direction: row;
 }
