@@ -25,5 +25,5 @@ export default function Logout() {
     event.preventDefault();
   };
 
-  return <button onClick={(e) => HandleLogout(e)}>Logout</button>;
+  return <div onClick={(e) => HandleLogout(e)}>Logout</div>;
 }

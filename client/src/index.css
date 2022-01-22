@@ -1,26 +1,35 @@
-html, body, #app {
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  text-decoration: none;
-  background: white;
+:root {
+  --base: #2f4f4f;
+  --main: #698e8e;
+  --accent: #4f2f2f;
+  --middleish: #889a9a;
+  --light: #c3cccc;
+  --dark: #223a3a;
+  --color-primary: #009579;
+  --color-primary-dark: #007f67;
+  --color-secondary: #252c6a;
+  --color-error: #cc3333;
+  --color-success: #4bb544;
+  --border-radius: 4px;
+  --card-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07);
 }
 
-a:link {
-  color: white;
-}
-
-a:visited {
-  color: white;
-}
-
-body {
-  margin: 0;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background-color: var(--light);
 }
 
 code {
@@ -37,18 +46,142 @@ code {
   justify-content: space-around;
 }
 
-.container-sm {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.card {
-  margin: 10px 0;
-  width: 250px;
+.page {
+  background: var(--light);
+  margin-top: 80px;
   padding: 20px;
+  align-items: center;
 }
 
-.card-list {
-  margin: 20px 0;
-  font-size: 20px;
+img {
+  border-radius: 5px;
+}
+
+.col,
+.col-1,
+.col-10,
+.col-11,
+.col-12,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-auto,
+.col-lg,
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-auto,
+.col-md,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-auto,
+.col-sm,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-auto,
+.col-xl,
+.col-xl-1,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-auto {
+  position: relative;
+  width: 100%;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.nav-link {
+  margin-bottom: 0.5rem;
+  font-family: Cotoris;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 5.4rem;
+}
+
+h2 {
+  font-size: 2.7rem;
+}
+
+ol, ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1200px) and (min-width: 960px) {
+  h1 {
+    font-size: 7vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-1 {
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+  }
 }

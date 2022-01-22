@@ -1,0 +1,130 @@
+@import "../index.css";
+
+.recipe-container {
+  padding-right: 5%;
+  padding-left: 5%;
+  max-width: 100rem;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-bottom: 2rem;
+}
+
+.show-img {
+  margin-left: 12px;
+  max-width: 100%;
+  height: auto;
+}
+
+.header-info-col {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.content-container {
+  background-color: var(--middleish);
+  border-radius: 5px;
+  min-height: 400px;
+}
+
+.ingredient-list {
+  position: sticky;
+  top: 10rem;
+}
+
+.ingredient-container {
+  transition: all 0.15s ease-in-out;
+  display: inline;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.instruction-list {
+  position: sticky;
+  top: 10rem;
+}
+
+.directionlist ol li {
+  margin-left: -1rem;
+}
+
+.content-list {
+  margin-left: -1rem;
+}
+
+.pt-4 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.pl-4 {
+  padding-left: 1.5rem !important;
+}
+
+.titleform_input {
+  display: block;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--middleish);
+  outline: none;
+  background: var(--light);
+  transition: background 0.2s, border-color 0.2s;
+  min-height: 100px;
+}
+
+.titleform_input:focus {
+  border-color: var(--color-primary);
+  background: var(--middleish);
+}
+
+.recipeform_input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--light);
+  outline: none;
+  background: var(--middleish);
+  transition: background 0.2s, border-color 0.2s;
+  min-height: 300px;
+}
+
+.recipeform_input:focus {
+  border-color: var(--color-primary);
+  background: var(--light);
+}
+
+@media (min-width: 992px) {
+  .col-lg-1 {
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
