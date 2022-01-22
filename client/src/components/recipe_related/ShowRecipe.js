@@ -87,7 +87,7 @@ export default function ShowRecipe() {
 
       <div className="row" style={{ alignItems: "left" }}>
         <div className="col-md-1"></div>
-        <div className="col-lg-4 pt-4 content-container">
+        <div className="col-md-4 pt-4 content-container">
           <section className="ingredient-list">
             <h2>Ingredients</h2>
             <ul className="list-unstyled pl-4 ">
