@@ -4,6 +4,7 @@ RSpec.describe "Recipes", type: :request do
   describe "GET /index" do
     it "returns http success" do
       get "/recipes/index"
+
       expect(response).to have_http_status(:success)
     end
   end
@@ -14,5 +15,4 @@ RSpec.describe "Recipes", type: :request do
       expect(response).to have_http_status(:success)
     end
   end
-
 end
