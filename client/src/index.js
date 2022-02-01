@@ -15,18 +15,27 @@ import NewRecipe from "./components/recipe_related/NewRecipe";
 import EditRecipe from "./components/recipe_related/EditRecipe";
 import 'bootstrap/dist/css/bootstrap.css';
 
+function App() {
+  return (
+      <div>
+        <Routes>
+          <Route exact path="/" element={<div> <RecipeHighlight/><RecipeTiles /> </div>}/>
+          <Route path="/recipe/new" element={<NewRecipe />} />
+          <Route exact path="/recipe/:recipeId" element={<ShowRecipe />} />
+          <Route path="/recipe/:recipeId/edit" element={<EditRecipe />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+  );
+}
+
+
 ReactDOM.render(
   <BrowserRouter>
     <Toolbar />
-    <Routes>
-      <Route exact path="/" element={<div> <RecipeHighlight/><RecipeTiles /> </div>}/>
-      <Route path="/recipe/new" element={<NewRecipe />} />
-      <Route exact path="/recipe/:recipeId" element={<ShowRecipe />} />
-      <Route path="/recipe/:recipeId/edit" element={<EditRecipe />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <App/>
     <Footer />
   </BrowserRouter>,
   document.getElementById("root")

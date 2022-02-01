@@ -45,7 +45,7 @@ export default function RecipeTiles() {
             .map((data) => (
               <CardComp
                 key={data.id}
-                onClick={() => navigate(`/recipe/${data.id}`)}
+                onClick={() => {navigate(`/recipe/${data.id}`);}}
                 recipeimage={data.photo_url}
                 recipename={data.title}
               ></CardComp>
